@@ -44,7 +44,7 @@ A dynamic content manager built using **ReactJS** and **Tailwind CSS**. It allow
 3. Start the development server:
 
    ```bash
-   npm start
+   npm run dev
    ```
 
    or, with **yarn**:
