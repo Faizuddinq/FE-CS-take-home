@@ -1,97 +1,103 @@
-# Frontend Assignment: Dynamic Table with Dropdown Selection
 
-## 1. Assignment Overview
+# Dynamic Content Manager
 
-### Objective  
-Build a **React application** that displays data in a table, allowing users to switch between different data sources using a dropdown menu. The goal is to create a simple yet polished user experience with a focus on clean design and usability.
+A dynamic content manager built using **ReactJS** and **Tailwind CSS**. It allows users to fetch and display data from APIs, paginate through the content, and export the displayed data as a CSV file.
 
-### Note  
+## Features
 
-We value **attention to detail, clean design, and thoughtful execution**. The code doesn’t need to be production-ready but should reflect quality.  
-Feel free to exceed requirements and update the README with any bonus features or improvement ideas.  
-
----
-
-## 2. Getting Started
-
-1. **Clone and Fork**  
-   - Fork the assignment repository: [FE-take-home Repo](https://github.com/sarthakb657/FE-take-home).  
-   - Clone your forked repository to your local machine.
-
-2. **Start Development**  
-   - Install the dependencies.  
-   - Start the development server.  
-
-   The app will run at [http://localhost:3000](http://localhost:3000).  
-
-
-
-## 3. Design Reference
-
-Refer to the [Figma design file](https://www.figma.com/design/gJ3UgzzhS41hJpyuxgbVR4/Frontend-assignment?node-id=2127-188&t=aFTI90flpSf1BTeN-1) for guidance on the layout and styling.
+- **Fetch Content**: Dynamically fetch data from two endpoints (`Posts` and `Comments`).
+- **Pagination**: Displays 10 rows per page with navigation controls for pagination.
+- **Download Data**: Allows the user to download the displayed data as a CSV file.
+- **Loading Spinner**: Shows a spinner while data is being fetched.
+- **Responsive UI**: Designed using **Tailwind CSS** for a clean and modern look.
 
 ---
 
-## 4. Backend API
+## Getting Started
 
-The application will fetch data from the following endpoints:
+### Prerequisites
 
-- **Posts**:  
-  [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)  
-  Columns to display: **ID**, **Title**
+- **Node.js** (v14 or higher)
+- **npm** or **yarn** package manager
 
-- **Comments**:  
-  [https://jsonplaceholder.typicode.com/comments](https://jsonplaceholder.typicode.com/comments)  
-  Columns to display: **ID**, **Name**
+### Installation
 
-API calls should dynamically update the table content based on the dropdown selection.
+1. Clone the repository:
 
----
+   ```bash
+   git clone https://github.com/Faizuddinq/FE-CS-take-home.git
+   cd dynamic-content-manager
+   ```
 
-## 5. Tasks / Deliverables
+2. Install dependencies:
 
-### Tasks  
+   ```bash
+   npm install
+   ```
 
-1. **Dropdown**  
-   - Create a dropdown with two options: `Posts` and `Comments`.  
-   - Fetch data from the selected API endpoint.  
-   - Dynamically update the displayed table without page reloads.
+   or, if you prefer **yarn**:
 
-2. **Table (Reusable Component)**  
-   - Create a nested `TableComponent` to handle table rendering.  
-   - Pass fetched data and column configurations as props.  
-   - Ensure appropriate columns are displayed:  
-     - For **Posts**: `ID` and `Title`  
-     - For **Comments**: `ID` and `Name`  
+   ```bash
+   yarn install
+   ```
 
-3. **Pagination**  
-   - Implement pagination to display **10 rows per page**.  
-   - Include navigation controls (Previous, Next, Page Numbers) below the table.
+3. Start the development server:
 
-4. **Download Button**  
-   - Add a "Download" button below the table to export the currently displayed data.
+   ```bash
+   npm start
+   ```
 
-### Bonus Task (Optional)  
-- Add a loading spinner while data is being fetched.
+   or, with **yarn**:
 
----
+   ```bash
+   yarn start
+   ```
 
-## 6. Submission Guidelines
-
-1. **Complete the Assignment**  
-   - Finish the assignment in your forked repository.  
-
-2. **Share Your Work**  
-   - Share the public link to your forked repository, including any added instructions and assumptions, with us.  
-   - Email your submission to [hr@columsprout.ai](mailto:hr@columsprout.ai).
-
+4. Open your browser and visit [http://localhost:5173](http://localhost:5173).
 
 ---
 
-## 7. Evaluation Criteria
 
-We’re looking for a sleek, user-friendly design that stays true to the provided Figma and delivers a seamless experience. Show off your creativity with thoughtful touches, attention to detail, or unique enhancements to really make your submission stand out!
+
+## Usage
+
+1. **Select Content Type**: Use the dropdown to choose between `Posts` or `Comments`. This will dynamically load and display the corresponding data.
+
+2. **Pagination**: The table will display 10 rows per page. Use the pagination controls (Previous, Next, Page Numbers) to navigate through the data.
+
+3. **Download CSV**: Once you have the content you need, click the **Download** button to export the displayed data as a CSV file.
 
 ---
 
-Best of luck. We are excited to see your work.
+## How it Works
+
+- **Fetching Data**: The application fetches data from the following API endpoints:
+    - **Posts**: [https://jsonplaceholder.typicode.com/posts](https://jsonplaceholder.typicode.com/posts)
+    - **Comments**: [https://jsonplaceholder.typicode.com/comments](https://jsonplaceholder.typicode.com/comments)
+  
+- **Pagination**: The data is paginated into 10 rows per page. Pagination logic is handled through a custom `Pagination` component, which is embedded inside the `TableComponent`.
+
+- **Download CSV**: The `Download` component allows you to export the currently displayed data to a CSV file. The download is disabled for 1 second after clicking, to avoid multiple requests.
+
+---
+
+## Components
+
+- **Dropdown**: Lets you choose between `Posts` and `Comments`.
+- **TableComponent**: Displays data in a table format with pagination support.
+- **Spinner**: A loading spinner is shown while data is being fetched.
+- **Download**: A button that allows you to download the current data as a CSV file.
+- **Pagination**: A reusable component that handles the pagination logic.
+
+---
+
+## Dependencies
+
+- **React**: JavaScript library for building user interfaces.
+
+- **Tailwind CSS**: Utility-first CSS framework for building custom designs.
+
+
+---
+
+
