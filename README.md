@@ -26,7 +26,7 @@ A dynamic content manager built using **ReactJS** and **Tailwind CSS**. It allow
 
    ```bash
    git clone https://github.com/Faizuddinq/FE-CS-take-home.git
-   cd dynamic-content-manager
+   cd FE-CS-take-home
    ```
 
 2. Install dependencies:
